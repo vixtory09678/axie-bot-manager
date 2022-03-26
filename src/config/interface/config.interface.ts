@@ -1,4 +1,1 @@
-export interface Secret {
-  name: string;
-  key: string;
-}
+export interface Secret {  name: string;  key: string;}

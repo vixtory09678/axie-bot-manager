@@ -1,6 +1,1 @@
-export interface Claim {
-  address: string;
-  hash: string;
-  isCompleted: boolean;
-  msg: string;
-}
+export interface Claim {  address: string;  hash: string;  isCompleted: boolean;  msg: string;}
