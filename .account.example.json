@@ -1,0 +1,16 @@
+[
+  {
+    "discordTag": "name1#1234",
+    "teamId": 0,
+    "ownerRonin":"YOUR_RONIN_ADDRESS_THAT_HAVE_AXIES_TEAM_0",
+    "scholarRonin":"SCHOLAR_WALLET_ADDRESS",
+    "profitShared": 50
+  },
+  {
+    "discordTag": "name2#1234",
+    "teamId": 1,
+    "ownerRonin":"YOUR_RONIN_ADDRESS_THAT_HAVE_AXIES_TEAM_1",
+    "scholarRonin":"SCHOLAR_WALLET_ADDRESS",
+    "profitShared": 50
+  }
+]

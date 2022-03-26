@@ -1,0 +1,55 @@
+version: "3"
+networks:
+  axie-bot-network:
+    driver: bridge
+
+services:
+  app:
+    build:
+      context: .
+    container_name: axie-bot
+    restart: always
+    image: axie-bot
+    volumes:
+      - "./src:/usr/src/app/src"
+    ports:
+      - 3002:3002
+    environment:
+      APP_PORT: 3002
+      NODE_ENV: "development"
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USERNAME: axie_admin
+      DB_PASSWORD: 
+      DB_NAME: axie_development
+
+      DISCORD_TOKEN: ""
+
+      DESTINATION_HOLDER_ADDRESS: ""
+      AXIE_BASE_API: "https://game-api.axie.technology/api/v1/"
+
+      SLP_CONTRACT: "0xa8754b9fa15fc18bb59458815510e40a12cd2014"
+      RONIN_PROVIDER: "https://api.roninchain.com/rpc"
+      RONIN_FREE_PROVIDER: "https://proxy.roninchain.com/free-gas-rpc"
+    networks:
+      - axie-bot-network
+    depends_on: 
+      - postgres
+
+  postgres:
+    image: postgres
+    container_name: db_axie
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: axie_admin
+      POSTGRES_PASSWORD: 
+      POSTGRES_DB: 
+    networks:
+      - axie-bot-network
+    volumes:
+      - database-data:/var/lib/postgresql/data/
+  
+volumes:
+  database-data:
