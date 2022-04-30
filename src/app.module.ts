@@ -15,7 +15,6 @@ import { HealthCheckModule } from './health-check/health-check.module';
       load: [configuration],
       envFilePath: '.env',
       isGlobal: true,
-      ignoreEnvFile: process.env.NODE_ENV === 'production',
     }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],

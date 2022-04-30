@@ -12,7 +12,6 @@ export class AxieApiService {
   async getAccountInformation(roninAddress: string) {
     const api = this.axie_api + roninAddress;
     const result = await lastValueFrom(this.httpService.get(api));
-    console.log(result.data);
     return result.data;
   }
 
